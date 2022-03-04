@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Stack from './components/Stack';
-import AppBar from './components/ResponsiveAppBar';
+import DrawerNavigator from './components/DrawerNavigator';
+
 
 export default function App() {
   return (
       <React.Fragment>
-        <AppBar></AppBar>
         <NavigationContainer>
-          <Stack></Stack>
+          <DrawerNavigator></DrawerNavigator>
         </NavigationContainer>
       </React.Fragment>
   );

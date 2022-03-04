@@ -1,12 +1,13 @@
 import React from "react";
-import { View, Text } from 'react-native';
+import { ScrollView } from "react-native-gesture-handler";
+import BasicCard from "../components/BasicCard";
 
 const MyProfileScreen = (props) => {
 
     return (
-        <View>
-            <Button variant="text"><ArrowBackIosNewIcon/> Back</Button>
-        </View>
+        <ScrollView>
+            <BasicCard></BasicCard>
+        </ScrollView>
     );
 }
 
