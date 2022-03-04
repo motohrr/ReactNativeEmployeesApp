@@ -1,17 +1,14 @@
 import React from "react";
-import { View, Text } from 'react-native';
-import { Button } from '@mui/material';
-import { ArrowBackIosNew } from "@mui/icons-material";
+import { ScrollView } from 'react-native';
+import MediaCard from "../components/MediaCard";
 
 
-const EmployeeDetailsScreen = (props) => {
-
+const EmployeeDetailsScreen = ({route}) => {
+    const employee = route.params.employee;
     return (
-        <View>
-            <Button variant="text" onClick={()=> {props.navigation.navigate('EmployeesList')}}>
-                <ArrowBackIosNew></ArrowBackIosNew> Back
-            </Button>
-        </View>
+        <ScrollView>
+            <MediaCard employee={employee}></MediaCard>
+        </ScrollView>
     );
 }
 

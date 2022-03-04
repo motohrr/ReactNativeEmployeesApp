@@ -13,7 +13,7 @@ const EmployeesListScreen = (props) => {
         <Box sx={{ mx: "auto", width: '90%' }}>
         {data &&
             data.map(employee => {
-                return <ActionAreaCard key={employee.id} address={`${employee.address.street} ,${employee.address.streetName} ,${employee.address.country} , ${employee.address.state}`} website={employee.website} name={`${employee.firstname} ${employee.lastname}`} id={employee.id} navigation={props.navigation}></ActionAreaCard>;
+                return <ActionAreaCard key={employee.id} employee={employee} navigation={props.navigation}></ActionAreaCard>;
             })
         }
         </Box>
