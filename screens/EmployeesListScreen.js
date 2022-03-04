@@ -1,24 +1,31 @@
 import React from "react";
-import { ScrollView, Text , View} from "react-native";
+import { ScrollView, StyleSheet} from "react-native";
+import { Box, ThemeProvider } from '@mui/system';
+import ActionAreaCard from "../components/ActionAreaCard";
 import useFetch from "../hooks/useFetch";
 
 const EmployeesListScreen = (props) => {
 
-    const employees = useFetch('https://fakerapi.it/api/v1/persons')[0];
+    const [data] = useFetch("https://fakerapi.it/api/v1/persons");
 
-    if(employees){
-        return (
-            <ScrollView>
-                {employees.map(r => <Button>{r}</Button>)}
-            </ScrollView>
-        );
-    }else {
-        return(
-            <View>
-                <Text>Jein</Text>
-            </View>
-        )
-    }
+    return (
+      <ScrollView>
+        <Box sx={{ mx: "auto", width: '90%' }}>
+        {data &&
+            data.map(employee => {
+                return <ActionAreaCard key={employee.id} address={`${employee.address.street} ,${employee.address.streetName} ,${employee.address.country} , ${employee.address.state}`} website={employee.website} name={`${employee.firstname} ${employee.lastname}`} id={employee.id} navigation={props.navigation}></ActionAreaCard>;
+            })
+        }
+        </Box>
+      </ScrollView>
+    );
+
 }
+
+const styles = StyleSheet.create({
+    cardEmployee:{
+        marginVertical: 20,
+    }
+})
 
 export default EmployeesListScreen;

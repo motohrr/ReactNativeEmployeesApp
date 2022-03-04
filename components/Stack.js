@@ -10,8 +10,8 @@ const Stack = () => {
     return (
         <StackInstance.Navigator>
             <StackInstance.Screen component={EmployeesListScreen} name="EmployeesList" options={{title: 'Employees'}}/>
-            <StackInstance.Screen component={EmployeeDetailsScreen} name="EmployeeDetails"/>
-            <StackInstance.Screen component={MyProfileScreen} name="MyProfile"/>
+            <StackInstance.Screen component={EmployeeDetailsScreen} name="EmployeeDetails" options={{title: 'Employee Detail'}}/>
+            <StackInstance.Screen component={MyProfileScreen} name="MyProfile" options={{title: 'Profile'}}/>
         </StackInstance.Navigator>
     )
 }
