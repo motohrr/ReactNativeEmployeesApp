@@ -14,7 +14,7 @@ const DrawerNavigator = () => {
             cardStyle: { backgroundColor: '#00a656' }
         }}>
             <DrawerInstance.Screen 
-                    name="EmployeeList" 
+                    name="EmployeesList" 
                     component={EmployeesListScreen} 
                     options={
                         {
