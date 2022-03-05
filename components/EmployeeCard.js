@@ -5,15 +5,17 @@ import { Text, Card, Button, Icon } from 'react-native-elements';
 export default function EmployeeCard({employee, navigation}) {
   return (
         <Card>
-          <Card.Title>{employee.firstname} {employee.lastname}</Card.Title>
+          <Card.Title><Text h3>{employee.firstname} {employee.lastname}</Text></Card.Title>
           <Card.Divider></Card.Divider>
           <Text h5>
-              <b>Email: </b><br></br>{employee.email}
+              Email: 
           </Text>
+          <Text>{employee.email}</Text>
           <Card.Divider></Card.Divider>
           <Text h5>
-              <b>Address: </b><br></br>{`${employee.address.street}, ${employee.address.streetName}, ${employee.address.city}, ${employee.address.state}`}
+              Address: 
           </Text>
+          <Text>{`${employee.address.street}, ${employee.address.streetName}, ${employee.address.city}, ${employee.address.state}`}</Text>
           <Button
               icon={
                 <Icon
