@@ -3,13 +3,12 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import EmployeesListScreen from '../screens/EmployeesListScreen';
 import MyProfileScreen from '../screens/MyProfileScreen';
 import EmployeeDetailsScreen from '../screens/EmployeeDetailsScreen';
-import SpaIcon from '@mui/icons-material/Spa';
 
 const DrawerInstance = createDrawerNavigator();
 
 const DrawerNavigator = () => {
     return(
-        <DrawerInstance.Navigator initialRouteName="EmployeList" screenOptions={{
+        <DrawerInstance.Navigator initialRouteName="EmployeeList" screenOptions={{
             headerStyle: { elevation: 0 },
             cardStyle: { backgroundColor: '#00a656' }
         }}>
@@ -18,7 +17,6 @@ const DrawerNavigator = () => {
                     component={EmployeesListScreen} 
                     options={
                         {
-                            headerRight: () => <SpaIcon sx={{mr:2}} fontSize="large" color="action"></SpaIcon>,
                             title: "Employees",
                             headerStyle: {
                                 backgroundColor: '#00a656',

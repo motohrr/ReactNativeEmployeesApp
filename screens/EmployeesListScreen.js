@@ -1,7 +1,6 @@
 import React from "react";
-import { ScrollView, StyleSheet} from "react-native";
-import { Box, ThemeProvider } from '@mui/system';
-import ActionAreaCard from "../components/ActionAreaCard";
+import { ScrollView, StyleSheet, View} from "react-native";
+import EmployeeCard from "../components/EmployeeCard";
 import useFetch from "../hooks/useFetch";
 
 const EmployeesListScreen = (props) => {
@@ -10,13 +9,13 @@ const EmployeesListScreen = (props) => {
 
     return (
       <ScrollView>
-        <Box sx={{ mx: "auto", width: '90%' }}>
+        <View>
         {data &&
             data.map(employee => {
-                return <ActionAreaCard key={employee.id} employee={employee} navigation={props.navigation}></ActionAreaCard>;
+                return <EmployeeCard key={employee.id} employee={employee} navigation={props.navigation}></EmployeeCard>;
             })
         }
-        </Box>
+        </View>
       </ScrollView>
     );
 
