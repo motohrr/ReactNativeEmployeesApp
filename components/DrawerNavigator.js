@@ -3,10 +3,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import EmployeesListScreen from '../screens/EmployeesListScreen';
 import MyProfileScreen from '../screens/MyProfileScreen';
 import EmployeeDetailsScreen from '../screens/EmployeeDetailsScreen';
+import { Icon } from 'react-native-elements';
 
 const DrawerInstance = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+const DrawerNavigator = ({navigation}) => {
     return(
         <DrawerInstance.Navigator initialRouteName="EmployeeList" screenOptions={{
             headerStyle: { elevation: 0 },
@@ -17,6 +18,7 @@ const DrawerNavigator = () => {
                     component={EmployeesListScreen} 
                     options={
                         {
+                            headerRight: ()=> <Icon raised color= '#145214' name='eco'/>,
                             title: "Employees",
                             headerStyle: {
                                 backgroundColor: '#00a656',
