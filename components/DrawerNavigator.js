@@ -35,6 +35,7 @@ const DrawerNavigator = ({navigation}) => {
                 {
                     drawerIcon: () => <Icon reverse name="portrait"></Icon>,
                     title: 'My Profile',
+                    headerRight: ()=> <Icon raised color= '#145214' name='eco'/>,
                     headerStyle: {
                         backgroundColor: '#00a656',
                     },
@@ -47,6 +48,7 @@ const DrawerNavigator = ({navigation}) => {
             <DrawerInstance.Screen name="EmployeeDetails" component={EmployeeDetailsScreen} 
              options={{
                 drawerLabel: () => null,
+                headerRight: ()=> <Icon raised color= '#145214' name='eco'/>,
                 title: 'Details',
                 drawerIcon: () => null,
                 headerStyle: {
