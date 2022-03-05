@@ -18,6 +18,7 @@ const DrawerNavigator = ({navigation}) => {
                     component={EmployeesListScreen} 
                     options={
                         {
+                            drawerIcon: () => <Icon reverse name="person"></Icon>,
                             headerRight: ()=> <Icon raised color= '#145214' name='eco'/>,
                             title: "Employees",
                             headerStyle: {
@@ -32,6 +33,7 @@ const DrawerNavigator = ({navigation}) => {
             <DrawerInstance.Screen name="MyProfile" component={MyProfileScreen} 
              options={
                 {
+                    drawerIcon: () => <Icon reverse name="portrait"></Icon>,
                     title: 'My Profile',
                     headerStyle: {
                         backgroundColor: '#00a656',
